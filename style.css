@@ -25,6 +25,7 @@
   top: 0;
   padding: 5px 3px;
   border: 22px solid coral;
+  z-index: 1;
 }
 
 .carrousel__figure {

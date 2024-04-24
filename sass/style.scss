@@ -24,6 +24,7 @@
     top: 0;
     padding: 5px 3px;
     border: 22px solid coral;
+    z-index: 1;
 }
 
 .carrousel__figure{
@@ -40,7 +41,6 @@
     object-fit: cover;
     opacity: 0; //rendre les images invisibles
 }
-
 
 .carrousel--ouvrir{
     transform: scale(1);
