@@ -15,9 +15,10 @@
     
     //Création dynamique d'une image du carrousel 
     let galerie__img = galerie.querySelectorAll('img')
+    carrousel__img.src = galerie__img.src
     console.log("premiere image de la galerie = " + galerie__img.src)
     let index = 0
-    // carrousel__img.src = galerie__img.src
+    
 
     for (const elm of galerie__img){   
         creer_image_galerie(index, elm)     
@@ -50,35 +51,38 @@
      */
     
     function creer_radio_carrousel(index){    
-        let carrousel__radio = document.createElement('input');
+        let carrousel__radio = document.createElement('input')
         // Ajouter une classe 
-        carrousel__radio.classList.add('carrousel__radio');
+        carrousel__radio.classList.add('carrousel__radio')
         // ajouter un index
         carrousel__radio.dataset.index = index;
         // ajouter un type radio
-        carrousel__radio.setAttribute('type', 'radio');
+        carrousel__radio.setAttribute('type', 'radio')
         // spécifier name 
-        carrousel__radio.setAttribute('name', 'radio__carrousel');
+        carrousel__radio.setAttribute('name', 'radio__carrousel')
         // ajouter dans carrousel__form 
-        let carrousel__form = document.querySelector('.carrousel__form');
-        carrousel__form.appendChild(carrousel__radio);
+        let carrousel__form = document.querySelector('.carrousel__form')
+        carrousel__form.appendChild(carrousel__radio)
         //Ajouter un écouteur qui permettera de modifier l'opacité de l'image index
         //carrousel__figure.children[index].style.opacity = 1
 
         /* Écouteur pour capter les clics des boutons radio */
-        carrousel__radio.addEventListener('mousedown', function(){
-        console.log("Clic sur bouton radio");
-        })
+        carrousel__radio.addEventListener('change', function(){
+        //Vérifier que le bouton radio enregistre bien les clics    
+        console.log("Clic sur bouton radio")
+        //Vérifier que la galerie existe bel et bien
+        console.log(galerie__img)
 
-        //boucle for of pour chaque bouton radio
-        let boutonRadio = carrousel__radio
-        for(unBoutonRadio of lesBoutonsRadio){
-            if (index === selectedIndex) {
-                figure.style.opacity = 1;
-            } else {
-                figure.style.opacity = 0;
-            }
-        }
+             // Sélectionner la figure correspondant à l'index et changer son opacité
+             let figures = document.querySelectorAll('.carrousel__figure');
+             figures.forEach((figure, index) => {
+                 if (index === carrousel__figure) {
+                     figure.style.opacity = 1
+                 } else {
+                     figure.style.opacity = 0
+                 }
+             })
+        })
     }
     
     /*
