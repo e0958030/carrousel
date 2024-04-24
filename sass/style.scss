@@ -23,7 +23,9 @@
     right: 0;
     top: 0;
     padding: 5px 3px;
-    border: 22px solid coral;
+    margin-right: 1em;
+    margin-top: 1em;
+    border: 6px solid #fff;
     z-index: 1;
 }
 
@@ -49,3 +51,30 @@
 .bouton_ouvrir{
     width: 200px;
 }
+
+//Pour centrer les boutons radio
+.carrousel__form{
+    display: flex;
+    justify-content: center;
+}
+
+.carrousel__radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    padding: 2em;
+    transition: box-shadow 0.3s ease;
+    margin-right: 10px; /* Adjust the margin to create space between buttons */
+    align-content: center;
+}
+
+//Changer la couleur lorsque :checked
+.carrousel__radio:checked {
+    accent-color: coral;
+}
+
+
+
+
+
