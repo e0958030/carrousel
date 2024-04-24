@@ -16,7 +16,7 @@
     //Création dynamique d'une image du carrousel 
     let galerie__img = galerie.querySelectorAll('img')
     carrousel__img.src = galerie__img.src
-    console.log("premiere image de la galerie = " + galerie__img.src)
+    // console.log("premiere image de la galerie = " + galerie__img.src)
     let index = 0
     
 
@@ -75,11 +75,11 @@
 
              // Sélectionner la figure correspondant à l'index et changer son opacité
              let figures = document.querySelectorAll('.carrousel__figure');
-             figures.forEach((figure, index) => {
-                 if (index === carrousel__figure) {
-                     figure.style.opacity = 1
+             figures.forEach((figure, indexRadio) => {
+                if (indexRadio == index) {
+                    carrousel__figure.children[index].style.opacity = 1
                  } else {
-                     figure.style.opacity = 0
+                    carrousel__figure.children[index].style.opacity = 0
                  }
              })
         })
