@@ -2,7 +2,7 @@
 ## Par Camilia El Moustarih
 ## Carrousel avec galerie d'images
 
-<h2>Lien du Github Page : https://e0958030.github.io/carrousel/</h2>
+<h2>Lien du Github Page : https://github.com/e0958030/carrousel/tree/tp2</h2>
 
 <h2>Lien du site WHC :  https://gftnth00.mywhc.ca/tim14/</h2>
 
