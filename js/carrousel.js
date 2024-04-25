@@ -72,16 +72,18 @@
         //Vérifier que la galerie existe bel et bien
         console.log(galerie__img)
 
-             // Sélectionner la figure correspondant à l'index et changer son opacité
-             let indexSelection = carrousel__radio.dataset.index
-             let figures = document.querySelectorAll('.carrousel__img')
-             
-             for(let i=0; i<figures.length; i++){
-                figures[i].style.opacity = 0
-             }
+            // Sélectionner la figure correspondant à l'index et changer son opacité
+            let indexSelection = carrousel__radio.dataset.index
+            let figures = document.querySelectorAll('.carrousel__img')
+            
+            //Pour chaque figure (image du carrousel sélectionnée), mettre son opacité
+            //à 0 initialement et ensuite la mettre à 1 pour l'afficher
+            for(let i=0; i<figures.length; i++){
+            figures[i].style.opacity = 0
+            }
 
-             figures[indexSelection].style.opacity = 1
-             })
+            figures[indexSelection].style.opacity = 1
+            })
     }    
     
     /*
