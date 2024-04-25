@@ -1,5 +1,3 @@
-// (fonction(){})() est une fonction auto éxécutante
-
 (function(){
     console.log("Vive Javascript")
     let carrousel = document.querySelector('.carrousel')
@@ -9,21 +7,22 @@
     let carrousel__x = document.querySelector('.carrousel__x')
     console.log('carrousel__x' + carrousel__x.tagName)
     let galerie = document.querySelector('.galerie')
-    console.log('galerie' + galerie.tagName)
-    let carrousel__figure = document.querySelector('figure')
-    let carrousel__img = document.createElement('img')
-    
-    //Création dynamique d'une image du carrousel 
-    let galerie__img = galerie.querySelectorAll('img')
-    carrousel__img.src = galerie__img.src
-    // console.log("premiere image de la galerie = " + galerie__img.src)
-    let index = 0
-    
+    console.log('galerie = ' + galerie.tagName)
+    let carrousel__figure = document.querySelector('.carrousel__figure')
 
-    for (const elm of galerie__img){   
-        creer_image_galerie(index, elm)     
+
+    /* récupère la première image de la galerie */
+    // let galerie__img = galerie.querySelector('img')
+    /* pour créer une collection d'images de la galerie */
+    let galerie__img = galerie.querySelectorAll('img')
+    console.log( galerie__img)
+    let index = 0
+    for (const elm of galerie__img)
+    {
+        creer_image_carrousel(index, elm)
         creer_radio_carrousel(index)
-        index = index++
+        index = index +=1
+
     }
     
     /**
@@ -32,10 +31,10 @@
      * @param elm l'élément image de la galerie
      */
   
-    function creer_image_galerie(index, elm){
+    function creer_image_carrousel(index, elm){
         console.log(elm.src) //vérifier l'adresse url
         //créer les images du carrousel
-        
+        let carrousel__img = document.createElement('img')
         carrousel__img.src = elm.src
         carrousel__img.classList.add('carrousel__img')
         //ajouter un attribut à la balise html
@@ -74,16 +73,16 @@
         console.log(galerie__img)
 
              // Sélectionner la figure correspondant à l'index et changer son opacité
-             let figures = document.querySelectorAll('.carrousel__figure');
-             figures.forEach((figure, indexRadio) => {
-                if (indexRadio == index) {
-                    carrousel__figure.children[index].style.opacity = 1
-                 } else {
-                    carrousel__figure.children[index].style.opacity = 0
-                 }
+             let indexSelection = carrousel__radio.dataset.index
+             let figures = document.querySelectorAll('.carrousel__img')
+             
+             for(let i=0; i<figures.length; i++){
+                figures[i].style.opacity = 0
+             }
+
+             figures[indexSelection].style.opacity = 1
              })
-        })
-    }
+    }    
     
     /*
     //Collection d'images de la galerie    
@@ -95,11 +94,12 @@
     /* écouteur pour ouvrir la boîte modale */
     bouton.addEventListener('mousedown', function(){
         carrousel.classList.add('carrousel--ouvrir') // ouvrir le carrousel
-        console.log("J'ai bien cliqué sur le bouton!!!!!");
+        console.log("J'ai bien cliqué sur le bouton!!!!! Le carrousel est ouvert!");
     })
     /* Écouteur pour fermer la boîte modale */
     carrousel__x.addEventListener('mousedown', function(){
         carrousel.classList.remove('carrousel--ouvrir') // fermer le carrousel
+        console.log("Carrousel fermé")
     })  
 
 })()

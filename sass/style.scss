@@ -45,7 +45,7 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    opacity: 1; //rendre les images invisibles
+    opacity: 0; //rendre les images invisibles
 }
 
 .carrousel--ouvrir{
@@ -71,7 +71,7 @@
     transition: box-shadow 0.3s ease;
     margin-right: 10px; /* Adjust the margin to create space between buttons */
     align-content: center;
-    transition: transform 0.2s ease-in;
+    //transition: transform 0.2s ease-in;
 }
 
 //Changer la couleur lorsque :checked
@@ -79,9 +79,9 @@
     accent-color: coral;
 }
 
-.carrousel__radio:hover {
-    transform: scale(150%);
-}
+// .carrousel__radio:hover {
+//     transform: scale(150%);
+// }
 
 
 

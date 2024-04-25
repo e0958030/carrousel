@@ -46,7 +46,7 @@
   top: 0;
   left: 0;
   object-fit: cover;
-  opacity: 1;
+  opacity: 0;
 }
 
 .carrousel--ouvrir {
@@ -71,13 +71,8 @@
   transition: box-shadow 0.3s ease;
   margin-right: 10px; /* Adjust the margin to create space between buttons */
   align-content: center;
-  transition: transform 0.2s ease-in;
 }
 
 .carrousel__radio:checked {
   accent-color: coral;
-}
-
-.carrousel__radio:hover {
-  transform: scale(150%);
 }/*# sourceMappingURL=style.css.map */
