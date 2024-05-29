@@ -1,10 +1,89 @@
-.carrousel{
-    position: absolute;
-    width: 300px;
-    height: 300px;
+.carrousel{ //boîte modale qui contiendra le carrousel
+    transform: scale(0); //la boîte modale est invisible
+    transition: transform .25s; //permet d'animer l'ouverture de la boîte modale
+    position: fixed; //la div carrousel reste fixe lorsque l'utilisateur scroll
+    width: 100%;
+    height: 90%;
     border: 2px solid coral;
+    background-color: rgba(0, 89, 95, 0.5);
+    top: 0%;
+    left: 0%;
+    z-index: 1;
+
+    @media screen and (min-width : 400px) {
+        width: 75%;
+        height: 75%;
+        top: 12.5%;
+        left: 12.5%;
+    }
+}
+
+.carrousel__x{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 3px;
+    margin-right: 1em;
+    margin-top: 1em;
+    border: 6px solid #fff;
+    z-index: 1;
+}
+
+.carrousel__x:hover{
+    transform: scale(150%);
+}
+
+.carrousel__figure{
+    width: 100%;
+    height: 100%;
+}
+
+.carrousel__img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    opacity: 0; //rendre les images invisibles
+}
+
+.carrousel--ouvrir{
+    transform: scale(1);
 }
 
 .bouton_ouvrir{
     width: 200px;
 }
+
+//Pour centrer les boutons radio
+.carrousel__form{
+    display: flex;
+    justify-content: center;
+}
+
+.carrousel__radio {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    outline: none;
+    padding: 2em;
+    transition: box-shadow 0.3s ease;
+    margin-right: 10px; /* Adjust the margin to create space between buttons */
+    align-content: center;
+    //transition: transform 0.2s ease-in;
+}
+
+//Changer la couleur lorsque :checked
+.carrousel__radio:checked {
+    accent-color: coral;
+}
+
+// .carrousel__radio:hover {
+//     transform: scale(150%);
+// }
+
+
+
+
+
