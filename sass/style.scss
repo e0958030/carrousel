@@ -2,8 +2,8 @@
     transform: scale(0); //la boîte modale est invisible
     transition: transform .25s; //permet d'animer l'ouverture de la boîte modale
     position: fixed; //la div carrousel reste fixe lorsque l'utilisateur scroll
-    width: 100%;
-    height: 90%;
+    width: 30%;
+    height: 30%;
     border: 2px solid coral;
     background-color: rgba(0, 89, 95, 0.5);
     top: 0%;
@@ -44,7 +44,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    object-fit: cover;
+    object-fit: contain;
     opacity: 0; //rendre les images invisibles
 }
 
@@ -79,11 +79,23 @@
     accent-color: coral;
 }
 
-// .carrousel__radio:hover {
-//     transform: scale(150%);
-// }
+//Style des flèches
+.img__avant,
+.img__apres {
+    position: absolute;
+    top: 50%;
+    border: 3px solid white;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+}
 
+.img__avant {
+    left: 10px;
+}
 
-
+.img__apres {
+    right: 10px;
+}
 
 
