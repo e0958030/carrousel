@@ -1,5 +1,5 @@
 (function(){
-    console.log("Vive Javascript");
+    //console.log("Vive Javascript");
     let carrousel = document.querySelector('.carrousel');
     console.log("conteneur carrousel = " + carrousel.tagName);
     let bouton = document.querySelector('.bouton__ouvrir');
@@ -37,7 +37,7 @@
 
         // Attendre que l'image soit chargée pour ajuster la taille de la modal
         carrousel__img.addEventListener('load', function() {
-            ajusterTailleModal();
+            ajusterBoiteModale();
         });
     }
 
@@ -70,7 +70,7 @@
             }
 
             figures[indexSelection].style.opacity = 1;
-            ajusterTailleModal();
+            ajusterBoiteModale();
         });
     }
 
